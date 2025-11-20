@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <div className="flex justify-between items-center bg-gray-400 top-0 px-4 py-4 fixed w-full">
@@ -14,7 +16,7 @@ export default function Navbar() {
       </div>
       <div>
         <ul className="flex gap-10 pl-120">
-          <li>Shops</li>
+          <li>Shop</li>
           <li>Offers</li>
           <li>Contact</li>
           <li>Pages</li>

@@ -6,7 +6,7 @@ import { data } from "@/data/product";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <ProductCard />
       <div className="flex items-center justify-center">
