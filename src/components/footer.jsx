@@ -1,7 +1,12 @@
+"use client"
+import { usePathname } from "next/navigation";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-export default function Detail() {
+import { GiPlayButton } from "react-icons/gi";
+export default function Footer() {
+    const pathname = usePathname();
+    if(pathname == "/join" || pathname =="/register") return ;
     return(
         <>
         <div className="flex gap-30 mt-100 mx-15">
@@ -42,9 +47,13 @@ export default function Detail() {
                 <li>Contact Us</li>
             </ul>
         </div>
-        <div>
+        <div className="flex flex-col gap-5">
             <h1 className="text-2xl font-light">Subscribe Now</h1>
             <p>Subscribe your email  for newsletter and featured news  based on your interest</p>
+            <form className="flex" action="">
+                <input type="text" placeholder="write your email here" className="border-2 w-60 h-8 " />
+                <span ><GiPlayButton /></span>
+            </form>
         </div>
         </div>
         <div className="mt-20 ml-15">©2025 Pickbazar. Copyright © REDQ. All rights reserved worldwide. REDQ</div>
