@@ -1,6 +1,3 @@
-
-
-
 export const data = [
     {
         title: "$5",
