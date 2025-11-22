@@ -6,10 +6,10 @@ import { FaInstagram } from "react-icons/fa";
 import { GiPlayButton } from "react-icons/gi";
 export default function Footer() {
     const pathname = usePathname();
-    if(pathname == "/join" || pathname =="/register") return ;
+    if(pathname == "/" || pathname == "/join" || pathname =="/register") return ;
     return(
         <>
-        <div className="flex gap-30 mt-100 mx-15">
+        <div className="flex gap-30 m-15">
         <div className="">
             <img src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F2295%2FLogo-new.png&w=1920&q=75" />
             <p className="py-6">NY stateThruway, New York, USA</p>
@@ -50,9 +50,9 @@ export default function Footer() {
         <div className="flex flex-col gap-5">
             <h1 className="text-2xl font-light">Subscribe Now</h1>
             <p>Subscribe your email  for newsletter and featured news  based on your interest</p>
-            <form className="flex" action="">
-                <input type="text" placeholder="write your email here" className="border-2 w-60 h-8 " />
-                <span ><GiPlayButton /></span>
+            <form className="flex items-center " action="">
+                <input type="text" placeholder="write your email here" className="border-2 w-60 h-8 p-4" />
+                <span className="text-3xl"><GiPlayButton /></span>
             </form>
         </div>
         </div>

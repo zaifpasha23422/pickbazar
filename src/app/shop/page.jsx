@@ -11,11 +11,9 @@ export default function Shop() {
                 return ( 
                     <div 
                     key={item.id}
-                    className="flex flex-col border-2 border-black ">
-                        <div className="h-5">
-                            <Image src={item.image} alt="" height={500} width={500}/>
-                        </div>  
+                    className=" p-2 border-2 border-black ">
                         <div>
+                            <img src={item.image} alt="" height={35} width={60}/>
                         <h2 className="text-xl font-semibold">{item.name}</h2>
                         <h2>{item.address}</h2>
                         </div>  

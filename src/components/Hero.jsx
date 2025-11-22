@@ -1,13 +1,17 @@
 export default function Hero() {
   return (
     <div className="" >
-      <div className="flex flex-col justify-center items-center grocery w-380 h-180">
+      <div className="flex flex-col gap-5 justify-center items-center grocery w-full h-175">
         <div className=" text-5xl text-red-700  ">
           Groceries Delivered in 90 Minute
         </div>
         <p className="text-xl text-red-700">
           Get your healthy foods & snacks delivered at your doorsteps all day
           everyday
+          <form className="flex pt-10" action="">
+            <input type="text" className="border-2 rounded-l-2xl border-green-700 h-10 w-full "/>
+            <button className="bg-green-700 text-white w-35 rounded-r-2xl">Search</button>
+          </form>
         </p>
       </div>
       <div className="flex gap-4 m-8">

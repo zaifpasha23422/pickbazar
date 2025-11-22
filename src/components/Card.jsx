@@ -3,19 +3,19 @@ import { MdKeyboardArrowDown } from "react-icons/md"
 
 export default function ProductCard() {
   return (
-    <div className="absolute flex gap-10  bg-[#F3F4F6] ">
-      <div className="pr-30 px-10 sticky h-screen bg-white p-0 left-0 top-0">
-        <ul className="space-y-4 py-10 ">
-          <li className="flex">Fruits & Vegetables <MdKeyboardArrowDown /></li>
-          <li className="flex">Meat and Fish <MdKeyboardArrowDown /></li>
-          <li className="flex">Snacks <MdKeyboardArrowDown /></li>
-          <li className="flex">Pet Care <MdKeyboardArrowDown /></li>
-          <li className="flex">Home & Cleaning <MdKeyboardArrowDown /></li>
-          <li className="flex">Dairy <MdKeyboardArrowDown /></li>
-          <li className="flex">Cooking <MdKeyboardArrowDown /></li>
-          <li className="flex">Breakfast <MdKeyboardArrowDown /></li>
-          <li className="flex">Beverage <MdKeyboardArrowDown /></li>
-          <li className="flex">Health & Beauty <MdKeyboardArrowDown /></li>
+    <div className="flex gap-10 relative bg-[#F3F4F6] pb-20">
+      <div className="w-80 sticky bg-white h-screen  top-0 mt-8 ">
+        <ul className=" w-full p-5 space-y-5 mx-auto">
+          <li className="flex items-center justify-between">Fruits & Vegetables <MdKeyboardArrowDown /></li>
+          <li className="flex items-center justify-between">Meat and Fish <MdKeyboardArrowDown /></li>
+          <li className="flex items-center justify-between">Snacks <MdKeyboardArrowDown /></li>
+          <li className="flex items-center justify-between">Pet Care <MdKeyboardArrowDown /></li>
+          <li className="flex items-center justify-between">Home & Cleaning <MdKeyboardArrowDown /></li>
+          <li className="flex items-center justify-between">Dairy <MdKeyboardArrowDown /></li>
+          <li className="flex items-center justify-between">Cooking <MdKeyboardArrowDown /></li>
+          <li className="flex items-center justify-between">Breakfast <MdKeyboardArrowDown /></li>
+          <li className="flex items-center justify-between">Beverage <MdKeyboardArrowDown /></li>
+          <li className="flex items-center justify-between">Health & Beauty <MdKeyboardArrowDown /></li>
         </ul>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pt-8 bg-gray-100">
@@ -35,6 +35,9 @@ export default function ProductCard() {
             </div>
           );
         })}
+      </div>
+         <div className="flex items-center justify-center absolute bottom-0  w-full mx-auto my-5">
+        <button className="bg-green-700 text-white items-center h-10 w-30 ">Load More</button>
       </div>
     </div>
   );

@@ -9,9 +9,7 @@ export default function Home() {
       {/* <Navbar /> */}
       <Hero />
       <ProductCard />
-      <div className="flex items-center justify-center">
-        <button className="bg-green-700 text-white items-center h-10 w-30 ">Load More</button>
-      </div>
+   
     </>
   );
 }

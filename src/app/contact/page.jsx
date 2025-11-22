@@ -37,23 +37,23 @@ export default function Contact() {
           How can we imporved your experience ?
         </div>
         <form action="" className="flex flex-col gap-2">
-          <div className="flex gap-50">
+          <div className="flex gap-10">
             <div>
               <label htmlFor="name">Name:</label>
               <br />
-              <input className="border-2" type="text" id="text" />
+              <input className="border-2 w-80 h-10 rounded-lg" type="text" id="text" />
             </div>
             <div>
               <label htmlFor="email">Email:</label>
               <br />
-              <input className="border-2" type="text" id="text" />
+              <input className="border-2 w-80 h-10 rounded-lg" type="text" id="text" />
             </div>
           </div>
           <label htmlFor="subject">Subject</label>
-          <input type="text" className="border-2" />
+          <input type="text" className="border-2 h-10 rounded-lg" />
 
           <label htmlFor="descrition">Description</label>
-          <input type="text" className="border-2 h-30" />
+          <input type="text" className="border-2 h-30 rounded-lg" />
         </form>
         <div className="">
           <button className="bg-green-700 rounded-2xl text-white w-25 h-10">Submit</button>

@@ -10,12 +10,12 @@ export default function Join(){
                 <div>
                 <label htmlFor="email">Email</label>
                 <br/>
-                <input type="text" className="border-2 w-100 h-10"/>
+                <input type="text" className="border-2 w-100 h-10 rounded-xl"/>
                 </div>
                 <div>
                 <label htmlFor="password">Password</label>
                 <br />
-                <input type="text" className="border-2 w-100 h-10" />
+                <input type="text" className="border-2 w-100 h-10 rounded-xl" />
                 </div>
                 <div className="flex w-100 h-12 bg-green-700  justify-center text-white rounded-xl" ><button>Login</button></div>
                 <div>Or</div>
@@ -24,7 +24,7 @@ export default function Join(){
             </form>
         </div>
         <div className="flex justify-center pt-10"> 
-            <p>Don't have any account? <button className="text-green-700"><a href="register">"Register </a></button></p>
+            <p>Don't have any account? <button className="text-green-700 underline"><a href="register">Register </a></button></p>
         </div>
             </div>
     )
