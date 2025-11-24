@@ -7,7 +7,7 @@ export default function Navbar() {
   if (pathname == "/join" || pathname == "/register") return;
 
   return (
-    <div className="flex justify-center items-center sm:justify-between  bg-amber-500 shadow py-4 md:py-6 z-50 sticky top-0 w-full overflow-hidden">
+    <div className="flex justify-center items-center sm:justify-between bg-white shadow py-4 md:py-6 z-50 sticky top-0 left-0 right-0">
       <div className="flex justify-center items-center gap-5"> 
         <div >
           <img
@@ -15,11 +15,11 @@ export default function Navbar() {
             alt="image"
           />
         </div>
-        <button className=" bg-white text-green-700 border-2 border-black md:h-10 md:w-30 rounded-xl ">
+        <button className=" bg-white text-green-700 border-2 border-black md:h-10 md:wrounded-xl hidden sm:block">
           Clothing
         </button>
       </div>
-      <div className="hidden md:block">
+      <div className="hidden xl:block">
         <ul className="flex md:gap-10  md:pl-120">
           <li>
             <Link href="/shop">Shop</Link>
@@ -32,7 +32,7 @@ export default function Navbar() {
           </li>
           <li className="relative group">
             <span >Pages</span>
-            <ul className="absolute space-y-2 p-4  bg-white flex-col gap-8 hidden group-hover:block">
+            <ul className="absolute p-4  bg-white flex-col gap-8 hidden group-hover:block">
               <li>Flash Sales</li>
               <li>Manufactures/Publishers</li>
               <li>Authors</li>
@@ -44,11 +44,11 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-      <div className="flex md:gap-10">
-        <button className="bg-green-700 rounded-2xl text-white h-8 md:w-16">
+      <div className="flex gap-10 ">
+        <button className="bg-green-700 rounded-2xl text-white h-8 md:w-16 hidden xl:block">
           <a href="/join"> Join</a>
         </button>
-        <button className="bg-green-700 rounded-2xl text-white h-8 md:w-40">
+        <button className="bg-green-700 rounded-2xl text-white h-8 md:w-40 hidden sm:block">
           Become a seller
         </button>
       </div>

@@ -1,12 +1,12 @@
 import {shops} from "@/data/shop"
 import Detail from "@/components/footer"
 import Image from "next/image"
-
+import Navbar from "@/components/Navbar"
 export default function Shop() {
     return(
-        <>
+        <div>
         <div className="mt-40 ml-50 text-3xl font-bold">All Shops</div>
-        <div className="grid grid-cols-3 mx-40 gap-5 mt-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-7 mx-20 pb-70">
             {shops.map((item) => {
                 return ( 
                     <div 
@@ -22,8 +22,7 @@ export default function Shop() {
             } 
             )}
         </div>
-        {/* <Detail/> */}
-        </>
+        </div>
 
     )
 }

@@ -3,8 +3,8 @@ import { MdKeyboardArrowDown } from "react-icons/md"
 
 export default function ProductCard() {
   return (
-    <div className="flex gap-10 relative bg-[#F3F4F6] pb-20">
-      <div className="w-80 sticky bg-white h-screen  top-0 mt-8 ">
+    <div className="flex gap-10 relative bg-[#F3F4F6] mb-14 pb-30">
+      <div className="w-80 sticky bg-white h-screen  top-0 mt-8 hidden xl:block ">
         <ul className=" w-full p-5 space-y-5 mx-auto">
           <li className="flex items-center justify-between">Fruits & Vegetables <MdKeyboardArrowDown /></li>
           <li className="flex items-center justify-between">Meat and Fish <MdKeyboardArrowDown /></li>
