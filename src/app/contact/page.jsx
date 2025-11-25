@@ -41,19 +41,19 @@ export default function Contact() {
             <div className="w-full sm:w-1/2">
               <label htmlFor="name">Name:</label>
               <br />
-              <input className="border-2 h-10 w-full  rounded-lg" type="text" id="text" />
+              <input className="border-2  border-slate-200 h-10 w-full  rounded-lg" type="text" id="text" />
             </div>
             <div className="w-full sm:w-1/2">
               <label htmlFor="email">Email:</label>
               <br />
-              <input className="border-2 h-10 w-full rounded-lg" type="text" id="text" />
+              <input className="border-2 border-slate-200 h-10 w-full rounded-lg" type="text" id="text" />
             </div>
           </div>
           <label htmlFor="subject">Subject</label>
-          <input type="text" className="border-2 h-10 rounded-lg" />
+          <input type="text" className="border-2 border-slate-200 h-10 rounded-lg" />
 
           <label htmlFor="descrition">Description</label>
-          <input type="text" className="border-2 h-30 rounded-lg" />
+          <input type="text" className="border-2 border-slate-200 h-30 rounded-lg" />
         </form>
         <div className="">
           <button className="bg-green-700 rounded-2xl text-white w-25 h-10">Submit</button>

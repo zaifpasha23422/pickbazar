@@ -1,13 +1,17 @@
 "use client";
 import Link from "next/link";
+import { FaApple } from "react-icons/fa";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { usePathname } from "next/navigation";
+
 
 export default function Navbar() {
   const pathname = usePathname();
   if (pathname == "/join" || pathname == "/register") return;
 
   return (
-    <div className="flex justify-center items-center sm:justify-between bg-white shadow py-4 md:py-6 z-50 sticky top-0 left-0 right-0">
+    <div className="flex justify-center items-center sm:justify-between bg-white shadow py-4 md:py-6 px-10  z-50 sticky top-0 left-0 right-0">
       <div className="flex justify-center items-center gap-5"> 
         <div >
           <img
@@ -15,24 +19,24 @@ export default function Navbar() {
             alt="image"
           />
         </div>
-        <button className=" bg-white text-green-700 border-2 border-black md:h-10 md:wrounded-xl hidden sm:block">
-          Clothing
+        <button className=" flex items-center  gap-2 justify-center bg-white text-green-700 border-2 border-slate-200 md:w-30 md:h-10 md:rounded-lg ">
+          <FaApple />Clothing <IoMdArrowDropdown />
         </button>
       </div>
       <div className="hidden xl:block">
         <ul className="flex md:gap-10  md:pl-120">
-          <li>
+          <li className="hover:text-green-700">
             <Link href="/shop">Shop</Link>
           </li>
-          <li>
+          <li className="hover:text-green-700">
             <Link href="/offer">Offers</Link>
           </li>
-          <li>
+          <li className="hover:text-green-700">
             <Link href="/contact">Contact</Link>
           </li>
           <li className="relative group">
-            <span >Pages</span>
-            <ul className="absolute p-4  bg-white flex-col gap-8 hidden group-hover:block">
+            <span className="flex items-center justify-center gap-1 hover:text-green-700" >Pages <IoIosArrowDropdownCircle /></span>
+            <ul className="absolute p-6 space-y-3 bg-white  hidden group-hover:block">
               <li>Flash Sales</li>
               <li>Manufactures/Publishers</li>
               <li>Authors</li>
@@ -41,6 +45,7 @@ export default function Navbar() {
               <li>Customer Refund Policy</li>
               <li>Vendor Refund Policy</li>
             </ul>
+    
           </li>
         </ul>
       </div>
