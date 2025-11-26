@@ -15,13 +15,22 @@ import { useState } from "react";
 
 export default function ProductCard() {
   const [fruit, setFruit] = useState(false);
+  const [meat, setMeat] = useState(false);
+  const [snack, setSnack] = useState(false);
+  const [petcare, setPetcare] = useState(false);
+  const [clean, setClean] = useState(false);
+  const [dairy, setDairy] = useState(false);
+  const [cook, setCook] = useState(false);
+  const [breakfast, setBreakfast] = useState(false);
+  const [beverage, setBeverage] = useState(false);
+  const [beauty, setBeauty] = useState(false);
   return (
     <div className="flex gap-10 relative bg-[#F3F4F6]">
       <div className="w-1/4 sticky bg-white h-screen top-20 mt-0.5 hidden xl:block ">
         <ul className=" w-full p-10 space-y-5 pr-10 ">
           <li
             onClick={() => setFruit(!fruit)}
-            className="flex flex-col items-center justify-between gap-2"
+            className="flex flex-col gap-2"
           >
             <div className="flex items-center">
             <p className="flex items-center gap-3">
@@ -32,12 +41,15 @@ export default function ProductCard() {
               <MdKeyboardArrowDown />
             </p>
           </div>
-            <ul className={`flex flex-col gap-2 pt-2 ${fruit ? "block" : "hidden"}`}>
+            <ul className={`flex flex-col pl-7 gap-2 pt-2 ${fruit ? "block" : "hidden"}`}>
               <li>Fruits</li>
               <li>Vegetables</li>
             </ul>
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li 
+           onClick={() =>setMeat(!meat)}
+           className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
             <p className="flex items-center gap-3">
               <TbMeat />
               Meat and Fish
@@ -45,8 +57,16 @@ export default function ProductCard() {
             <p>
               <MdKeyboardArrowDown />
             </p>
+            </div>
+            <ul className={`flex flex-col pl-7 gap-2 pt-2 ${meat ? "block" : "hidden"}`}>
+              <li>Fresh Fish</li>
+              <li>Meat</li>
+            </ul>
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li 
+           onClick={() =>setSnack(!snack)}
+           className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
             <p className="flex items-center gap-3">
               <BsFillCupFill />
               Snacks
@@ -54,8 +74,20 @@ export default function ProductCard() {
             <p>
               <MdKeyboardArrowDown />
             </p>
+            </div>
+            <ul className={`flex flex-col pl-7 gap-2 pt-2  ${snack ? "block" : "hidden"}`}>
+              <li>chocolates</li>
+              <li>Noodles</li>
+              <li>Maggie</li>
+              <li>Risole</li>
+              <li>Soups</li>
+              <li>Biscuits</li>
+            </ul>
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li 
+           onClick={() => setPetcare(!petcare)}
+           className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
             <p className="flex items-center gap-3">
               <PiBowlFoodBold />
               Pet Care
@@ -63,8 +95,17 @@ export default function ProductCard() {
             <p>
               <MdKeyboardArrowDown />
             </p>
+            </div>
+            <ul className={`flex flex-col pl-7 gap-2 pt-2 ${petcare ? "block" : "hidden"}`}>
+              <li>Cat food</li>
+              <li>Dog food</li>
+              <li>Accessories</li>
+            </ul>
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li 
+           onClick={() => setClean(!clean)}
+           className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
             <p className="flex items-center gap-3">
               <GiVacuumCleaner />
               Home & Cleaning
@@ -72,8 +113,17 @@ export default function ProductCard() {
             <p>
               <MdKeyboardArrowDown />
             </p>
+            </div>
+            <ul className={`flex flex-col pl-7 gap-2 pt-2 ${clean ? "block" :"hidden"}`}>
+              <li>Air Freshners</li>
+              <li>cleaning products</li>
+              <li>Kitchen Accessries</li>
+            </ul>  
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li 
+           onClick={() => setDairy(!dairy)}
+           className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
             <p className="flex items-center gap-3">
               <LuMilk />
               Dairy
@@ -81,8 +131,18 @@ export default function ProductCard() {
             <p>
               <MdKeyboardArrowDown />
             </p>
+            </div>
+            <ul className={`flex flex-col gap-2 pl-7 pt-2 ${dairy ? "block" : "hidden"}`}>
+              <li>Milk</li>
+              <li>Butter</li>
+              <li>Egg</li>
+              <li>Yogurt</li>
+            </ul>
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li 
+           onClick={() => setCook(!cook)}
+           className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
             <p className="flex items-center gap-3">
               <PiCookingPot />
               Cooking
@@ -90,8 +150,18 @@ export default function ProductCard() {
             <p>
               <MdKeyboardArrowDown />
             </p>
+            </div>
+            <ul className={`flex flex-col gap-2 pl-7 pt-2 ${cook ? "block" : "hidden"}`}>
+              <li>Rice</li>
+              <li>Flour</li>
+              <li>Oil</li>
+              <li>Sugar</li>
+            </ul>
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li 
+           onClick = {() => setBreakfast(!breakfast)}
+           className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
             <p className="flex items-center gap-3">
               <GiSlicedBread />
               Breakfast
@@ -99,8 +169,18 @@ export default function ProductCard() {
             <p>
               <MdKeyboardArrowDown />
             </p>
+            </div>
+            <ul className={`flex flex-col gap-2 pt-2 pl-7 ${breakfast ? "block" :"hidden"}`}>
+              <li>Bread</li>
+              <li>Milk</li>
+              <li>Jam</li>
+              <li>Butter</li>
+            </ul>
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li
+           onClick={() => setBeverage(!beverage)} 
+           className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
             <p className="flex items-center gap-3">
               <RiDrinks2Line />
               Beverage
@@ -108,8 +188,19 @@ export default function ProductCard() {
             <p>
               <MdKeyboardArrowDown />
             </p>
+            </div>
+            <ul className={`flex flex-col gap-2 pl-7 pt-2 ${beverage ? "block" :"hidden"}`}>
+              <li>Coffee</li>
+              <li>Energy Drinks</li>
+              <li>Juice</li>
+              <li>Fizzy Drinks</li>
+              <li>Tea</li>
+            </ul>
           </li>
-          <li className="flex items-center justify-between gap-2">
+          <li
+            onClick={()=> setBeauty(!beauty)} 
+            className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
             <p className="flex items-center gap-3">
               <MdOutlineHealthAndSafety />
               Health & Beauty
@@ -117,6 +208,14 @@ export default function ProductCard() {
             <p>
               <MdKeyboardArrowDown />
             </p>
+            </div>
+            <ul className={`flex flex-col gap-2 pl-7 pt-2 ${beauty ? "block" : "hidden"}`}>
+              <li>Cream</li>
+              <li>Deodorant</li>
+              <li>Face cream</li>
+              <li>Shaving needs</li>
+              <li>Hair Oil</li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -129,9 +228,9 @@ export default function ProductCard() {
               </div>
               <div className="flex flex-col px-3 py-5">
                 <h2 className="text-xl text-slate-400">{item.title}</h2>
-                <div className="flex justify-between items-center text-green-700">
+                <div className="flex justify-between items-center text-[#009F7F]">
                   {item.description}{" "}
-                  <button className="border-2 border-slate-200 text-green-700 px-4 py-1 rounded-2xl">
+                  <button className="border-2 border-slate-200 text-[#009F7F] px-4 py-1 rounded-2xl">
                     Cart
                   </button>
                 </div>
@@ -141,7 +240,7 @@ export default function ProductCard() {
         })}
       </div>
       {/* <div className="flex items-center justify-center z-10 absolute bottom-0  w-full mx-auto my-5">
-        <button className="bg-green-700 text-white items-center h-10 w-30 ">Load More</button>
+        <button className="bg-[#009F7F] text-white items-center h-10 w-30 ">Load More</button>
       </div> */}
     </div>
   );

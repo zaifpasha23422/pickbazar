@@ -1,4 +1,5 @@
 import { FaShoppingBag } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -16,25 +17,26 @@ export default function Hero() {
             <input
               type="text"
               placeholder="Search your products from here"
-              className="shadow-lg pl-5 rounded-l-xl border-white h-13 w-1/2"
+              className="shadow-lg pl-5 rounded-l-xl border-white h-14 w-1/2"
             />
-            <button className="bg-green-700 text-white w-35 rounded-r-2xl">
+            <button className="flex items-center justify-center gap-2 bg-[#009F7F] text-white w-35 rounded-r-2xl">
+              <FaSearch />
               Search
             </button>
           </form>
 
-          <div className="flex flex-col gap-2 items-center justify-center rounded-md bg-green-700 h-25 w-25 ml-[95%] fixed z-50">
+          <div className="flex flex-col gap-2 items-center justify-center rounded-md bg-[#009F7F] h-25 w-25 ml-[95%] fixed z-50">
             <span className="flex gap-2 text-white">
               <FaShoppingBag />0 item
             </span>
-            <button className="bg-white text-green-700 w-16 h-8 rounded-md">
+            <button className="bg-white text-[#009F7F] w-16 h-8 rounded-md">
               $0.00
             </button>
           </div>
         </div>
       </div>
 
-      <div className="flex gap-4 m-8">
+      {/* <div className="flex gap-4 m-8">
         <div>
           <img src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F902%2Foffer-5.png&w=1200&q=75" />
         </div>
@@ -44,7 +46,8 @@ export default function Hero() {
         <div className="hidden lg:block">
           <img src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F904%2Foffer-3.png&w=1200&q=75" />
         </div>
-      </div>
+      </div> */}
+    
     </div>
   );
 }

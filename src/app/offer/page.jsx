@@ -1,10 +1,11 @@
+import { FaChevronRight } from "react-icons/fa6";
 export default function Offers (){
     return(
         <>
         <div className=" bg-slate-200 py-25 ">
-            <div className="flex justify-center text-[35px]">Offers</div>
+            <div className="flex justify-center font-bold text-[35px]">Offers</div>
             <div className="flex justify-center gap-8 ">
-                <p>Home</p>
+                <p className="flex items-center ">Home <FaChevronRight /></p>
                 <p>Offers</p>
             </div>
         </div>

@@ -3,8 +3,8 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 export default function Contact() {
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-12 bg-gray-100">
-      <div className="my-10 ml-8 pl-6 w-1/3 rounded-xl bg-white ">
+    <div className="flex flex-col-reverse md:flex-row px-30 gap-12 bg-gray-100">
+      <div className="my-10 ml-8 pl-6 pb-10 w-1/3 rounded-xl bg-white ">
         <img
           src="https://pickbazar-react-rest.vercel.app/_next/static/media/contact-illustration.2f6adc05.svg"
           alt=""
@@ -56,7 +56,7 @@ export default function Contact() {
           <input type="text" className="border-2 border-slate-200 h-30 rounded-lg" />
         </form>
         <div className="">
-          <button className="bg-green-700 rounded-2xl text-white w-25 h-10">Submit</button>
+          <button className="bg-[#009F7F] rounded-2xl text-white w-25 h-10">Submit</button>
         </div>
       </div>
     </div>
