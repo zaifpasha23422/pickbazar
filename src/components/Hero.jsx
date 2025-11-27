@@ -1,5 +1,7 @@
+
 import { FaShoppingBag } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
+import Slider from "@/components/slider"
 
 export default function Hero() {
   return (
@@ -17,7 +19,7 @@ export default function Hero() {
             <input
               type="text"
               placeholder="Search your products from here"
-              className="shadow-lg pl-5 rounded-l-xl border-white h-14 w-1/2"
+              className="shadow-lg pl-5 rounded-l-xl h-14 w-1/2 border border-[#009F7F] hover:outline-none active:outline-none active:border-none hover:border-none"
             />
             <button className="flex items-center justify-center gap-2 bg-[#009F7F] text-white w-35 rounded-r-2xl">
               <FaSearch />
@@ -35,7 +37,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
+      <Slider/>
       {/* <div className="flex gap-4 m-8">
         <div>
           <img src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F902%2Foffer-5.png&w=1200&q=75" />
