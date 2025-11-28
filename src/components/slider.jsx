@@ -37,32 +37,32 @@ export default function Slider() {
   const nextSlide = () => setCurrent((c) => (c === maxIndex ? 0 : c + 1));
 
   return (
-    <div className="relative w-full px-8 mx-auto overflow-hidden py-12">
+    <div className="relative px-8 overflow-hidden py-12 ">
       {/* SLIDER */}
       <div
-        className="flex transition-transform duration-700 ease-out gap-6"
+        className="flex transition-transform duration-700 ease-out gap-5"
         style={{
-          transform: `translateX(-${current * (100 / visible)}%)`,
+          transform: `translateX(-${current * (107/ visible)}%)`,
         }}
       >
         {slides.map((slide) => (
           <div
             key={slide.id}
-            className="relative h-64 flex-shrink-0 shadow-md rounded-xl overflow-hidden group"
+            className="relative h-54 shrink-0 shadow-md rounded overflow-hidden group "
             style={{ width: `${100 / visible}%` }}
           >
             <Image
               src={slide.url}
               alt="slide"
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              className="object-cover group-hover:scale-200 transition-transform duration-500"
             />
           </div>
         ))}
       </div>
 
       {/* BUTTONS */}
-      <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
         <button
           onClick={prevSlide}
           className="pointer-events-auto bg-black/40 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/60 transition"

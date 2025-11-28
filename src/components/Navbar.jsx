@@ -11,15 +11,15 @@ export default function Navbar() {
   if (pathname == "/join" || pathname == "/register") return;
 
   return (
-    <div className="flex justify-center items-center sm:justify-between bg-white shadow py-4 md:py-6 px-10  z-50 sticky top-0 left-0 right-0">
-      <div className="flex justify-center items-center gap-5"> 
+    <div className="flex  items-center sm:justify-between bg-white shadow py-4 md:py-6 px-4 sm:px-10  z-50 sticky top-0 left-0 right-0">
+      <div className="flex justify-start  items-center gap-5"> 
         <div >
           <img
             src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F2295%2FLogo-new.png&w=1920&q=75"
             alt="image"
           />
         </div>
-        <button className=" flex items-center  gap-2 justify-center bg-white text-[#009F7F] border-2 border-slate-200 md:w-30 md:h-10 md:rounded-lg ">
+        <button className=" hidden lg:flex items-center  gap-2 justify-center bg-white text-[#009F7F] border-2 border-slate-200 md:w-30 md:h-10 md:rounded-lg ">
           <FaApple />Clothing <IoMdArrowDropdown />
         </button>
       </div>
@@ -50,10 +50,10 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="flex gap-10 ">
-        <button className="bg-[#009F7F] rounded-md text-white h-8 md:w-16 hidden xl:block">
+        <button className="bg-[#009F7F] rounded-md text-white px-6 py-2  hidden xl:block">
           <a href="/join"> Join</a>
         </button>
-        <button className="bg-[#009F7F] rounded-md text-white h-8 md:w-40 hidden sm:block">
+        <button className="bg-[#009F7F] rounded-md text-white  px-6 py-2 hidden sm:block">
           Become a seller
         </button>
       </div>
