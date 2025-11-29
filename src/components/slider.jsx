@@ -37,12 +37,12 @@ export default function Slider() {
   const nextSlide = () => setCurrent((c) => (c === maxIndex ? 0 : c + 1));
 
   return (
-    <div className="relative px-8 overflow-hidden py-12 ">
+    <div className="relative mx-6 overflow-hidden py-12 ">
       {/* SLIDER */}
       <div
         className="flex transition-transform duration-700 ease-out gap-5"
         style={{
-          transform: `translateX(-${current * (107/ visible)}%)`,
+          transform: `translateX(-${current * (106/ visible)}%)`,
         }}
       >
         {slides.map((slide) => (
@@ -55,7 +55,7 @@ export default function Slider() {
               src={slide.url}
               alt="slide"
               fill
-              className="object-cover group-hover:scale-200 transition-transform duration-500"
+              className="object-cover group-hover:scale-120 transition-transform duration-500"
             />
           </div>
         ))}

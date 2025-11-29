@@ -1,6 +1,9 @@
 
 import { FaShoppingBag } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
+import { FaApple } from "react-icons/fa";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { BsFilterLeft } from "react-icons/bs";
 import Slider from "@/components/slider"
 
 export default function Hero() {
@@ -37,7 +40,9 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <div>
       <Slider/>
+      </div>  
       {/* <div className="flex gap-4 m-8">
         <div>
           <img src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F902%2Foffer-5.png&w=1200&q=75" />
@@ -49,7 +54,10 @@ export default function Hero() {
           <img src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F904%2Foffer-3.png&w=1200&q=75" />
         </div>
       </div> */}
-    
+    <div className="flex justify-between mx-4 mb-1">
+      <button className="flex items-center text-xl gap-1 bg-gray-100 py-1 px-2 rounded"><BsFilterLeft />Filter</button>
+      <button className="flex items-center text-xl gap-1"> <FaApple /> Grocery <IoMdArrowDropdown /></button>
+    </div>
     </div>
   );
 }

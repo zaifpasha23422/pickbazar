@@ -3,9 +3,9 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 export default function Contact() {
   return (
-    <div className="flex flex-col-reverse md:flex-row px-30 gap-12 bg-gray-100">
-      <div className="my-10 ml-8 pl-6 pb-10 w-1/3 rounded-xl bg-white ">
-        <img
+    <div className="flex flex-col-reverse md:flex-row px-10 xl:px-40 gap-12 bg-gray-100">
+      <div className="mb-6 md:my-10  p-4 w-full  md:w-1/3 rounded-xl bg-white ">
+        <img className="w-700"
           src="https://pickbazar-react-rest.vercel.app/_next/static/media/contact-illustration.2f6adc05.svg"
           alt=""
         />
@@ -32,7 +32,7 @@ export default function Contact() {
           </ul>
         </main>
       </div>
-      <div className="my-10 rounded-xl flex flex-col gap-10  bg-white p-15 ">
+      <div className="mt-6 md:my-10 rounded-xl flex flex-col gap-10  bg-white p-15  ">
         <div className="text-3xl font-semibold">
           How can we imporved your experience ?
         </div>

@@ -219,7 +219,7 @@ export default function ProductCard() {
           </li>
         </ul>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pt-8 p-4 mb-10 bg-gray-100">
+      <div className="grid mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-8 p-4 mb-10 bg-gray-100">
         {data.map((item) => {
           return (
             <div key={item.id} className=" shadow rounded-lg bg-white ">
