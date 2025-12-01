@@ -54,9 +54,11 @@ export default function Hero() {
           <img src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F904%2Foffer-3.png&w=1200&q=75" />
         </div>
       </div> */}
-    <div className="flex justify-between mx-4 mb-1">
+    <div className="block lg:hidden">
+    <div className="flex justify-between mx-4  mb-2">
       <button className="flex items-center text-xl gap-1 bg-gray-100 py-1 px-2 rounded"><BsFilterLeft />Filter</button>
       <button className="flex items-center text-xl gap-1"> <FaApple /> Grocery <IoMdArrowDropdown /></button>
+    </div>
     </div>
     </div>
   );

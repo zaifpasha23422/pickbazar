@@ -14,17 +14,10 @@ export default function Navbar() {
   const pathname = usePathname();
   if (pathname == "/join" || pathname == "/register") return;
 
-  // function handleOpen() {
-  //   if (isOpen) {
-  //     <Modal isOpen={true} />;
-  //   }
-  //   setOpen(!open)
-  // }
-
-
+ 
   return (
-    <div className=" relative">
-      <div className="flex fixed items-center sm:justify-between bg-white shadow py-4 md:py-6 px-4 sm:px-10  z-50 top-0 left-0 right-0">
+    <div className="relative">
+      <div className="flex fixed items-center sm:justify-between bg-white shadow py-4 lg:py-6 px-4 sm:px-10  z-50 top-0 left-0 right-0">
         <div className="flex justify-start  items-center gap-5">
           <div>
             <img
@@ -66,7 +59,7 @@ export default function Navbar() {
         </div>
         <div className="flex gap-10 ">
           <button
-            onClick={()=> setOpen(!open)}
+            onClick={()=> setOpen(!isOpen)}
             className="bg-[#009F7F] rounded-md text-white px-6 py-2  hidden xl:block"
           >
             Join
@@ -76,7 +69,8 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-       <Modal isOpen={true} setOpen={setOpen}/>;
+    {/* </div> */}
+    <Modal isOpen={isOpen} setOpen={setOpen}/>
     </div>
   );
 }

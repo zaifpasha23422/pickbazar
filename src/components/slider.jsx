@@ -48,14 +48,14 @@ export default function Slider() {
         {slides.map((slide) => (
           <div
             key={slide.id}
-            className="relative h-54 shrink-0 shadow-md rounded overflow-hidden group "
+            className="relative h-40 mt-10 lg:mt-0 xl:h-54 shrink-0 shadow-md rounded overflow-hidden group "
             style={{ width: `${100 / visible}%` }}
           >
             <Image
               src={slide.url}
               alt="slide"
               fill
-              className="object-cover group-hover:scale-120 transition-transform duration-500"
+              className="bg-cover group-hover:scale-120 transition-transform duration-500"
             />
           </div>
         ))}
