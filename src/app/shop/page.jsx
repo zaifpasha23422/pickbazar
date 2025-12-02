@@ -2,7 +2,7 @@ import { shops } from "@/data/shop";
 import Image from "next/image";
 export default function Shop() {
   return (
-    <div className=" px-10  xl:px-56 py-15">
+    <div className=" px-10  xl:px-56 py-15 mt-20">
       <div className="text-3xl font-bold">All Shops</div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
         {shops.map((item) => {
@@ -21,8 +21,8 @@ export default function Shop() {
                 />
               </div>
               <div className="flex flex-col p-2">
-                <h className="text-md font-bold">{item.name}</h>
-                <h className="text-xs">{item.address}</h>
+                <h1 className="text-md font-bold">{item.name}</h1>
+                <h1 className="text-xs">{item.address}</h1>
               </div>
             </div>
           );

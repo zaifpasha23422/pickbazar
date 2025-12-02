@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -11,7 +12,7 @@ export default function Footer() {
         <>
         <div className="flex flex-wrap gap-5 sm:gap-30 mx-4 pt-20 sm:mx-20 ">
         <div className="w-36">
-            <img src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F2295%2FLogo-new.png&w=1920&q=75" />
+            <Image src="/image/Logo-new.webp" alt="" width={100} height={100} />
             <p className="py-6">NY stateThruway, New York, USA</p>
             <p>demo@demo.com</p>
             <p>129290122122</p>

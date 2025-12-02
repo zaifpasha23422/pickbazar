@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 import { ImCross } from "react-icons/im";
 
@@ -10,7 +11,7 @@ const Register = ({register,setRegister}) => {
             <ImCross />
         </button>
         <div className="flex flex-col items-center gap-5">
-            <img className="h-8 w-40" src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F2295%2FLogo-new.png&w=1920&q=75"  />
+            <Image  src="/image/Logo-new (3).webp" alt="" height={150} width={150} />
             <p className="text-slate-500">By signing up, you agree to our <span className="text-[#009F7F] underline">terms</span> & <span className="text-[#009F7F] underline"> policy </span></p>
         </div>
         <form className="flex flex-col items-center gap-5 pt-8" action="">

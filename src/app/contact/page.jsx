@@ -1,12 +1,15 @@
+import Image from "next/image";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 export default function Contact() {
   return (
-    <div className="flex flex-col-reverse md:flex-row px-10 xl:px-40 gap-12 bg-gray-100">
+    <div className="flex flex-col-reverse md:flex-row px-10 xl:px-40 gap-12 bg-gray-100 mt-20">
       <div className="mb-6 md:my-10  p-4 w-full  md:w-1/3 rounded-xl bg-white ">
-        <img className="w-700"
-          src="https://pickbazar-react-rest.vercel.app/_next/static/media/contact-illustration.2f6adc05.svg"
+        <Image
+          src="/image/contact-illustration.2f6adc05.svg"
+          width={700}
+          height={200}
           alt=""
         />
         <main className="flex flex-col  gap-4 mt-4">
@@ -41,22 +44,38 @@ export default function Contact() {
             <div className="w-full sm:w-1/2">
               <label htmlFor="name">Name:</label>
               <br />
-              <input className="border-2  border-slate-200 h-10 w-full  rounded-lg" type="text" id="text" />
+              <input
+                className="border-2  border-slate-200 h-10 w-full  rounded-lg"
+                type="text"
+                id="text"
+              />
             </div>
             <div className="w-full sm:w-1/2">
               <label htmlFor="email">Email:</label>
               <br />
-              <input className="border-2 border-slate-200 h-10 w-full rounded-lg" type="text" id="text" />
+              <input
+                className="border-2 border-slate-200 h-10 w-full rounded-lg"
+                type="text"
+                id="text"
+              />
             </div>
           </div>
           <label htmlFor="subject">Subject</label>
-          <input type="text" className="border-2 border-slate-200 h-10 rounded-lg" />
+          <input
+            type="text"
+            className="border-2 border-slate-200 h-10 rounded-lg"
+          />
 
           <label htmlFor="descrition">Description</label>
-          <input type="text" className="border-2 border-slate-200 h-30 rounded-lg" />
+          <input
+            type="text"
+            className="border-2 border-slate-200 h-30 rounded-lg"
+          />
         </form>
         <div className="">
-          <button className="bg-[#009F7F] rounded-2xl text-white w-25 h-10">Submit</button>
+          <button className="bg-[#009F7F] rounded-2xl text-white w-25 h-10">
+            Submit
+          </button>
         </div>
       </div>
     </div>

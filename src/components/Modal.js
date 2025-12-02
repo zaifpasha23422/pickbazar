@@ -3,6 +3,7 @@ import { CiMobile1 } from "react-icons/ci";
 import { FaGoogle } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import Register from "./register";
+import Image from "next/image";
 
 
 const Modal = ({ isOpen, setOpen }) => {
@@ -20,7 +21,7 @@ const Modal = ({ isOpen, setOpen }) => {
         </button>
         <div className={`mt-10`}>
           <div className="flex flex-col justify-center items-center gap-5 ">
-            <img src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F2295%2FLogo-new.png&w=1920&q=75" />
+            <Image src="/image/Logo-new.webp" alt="" height={200} width={200} />
             <p className="text-xl text-slate-500">
               Login with your email & password
             </p>

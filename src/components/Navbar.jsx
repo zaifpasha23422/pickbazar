@@ -8,6 +8,7 @@ import { FaGoogle } from "react-icons/fa";
 import { CiMobile1 } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import Modal from "./Modal";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
@@ -17,12 +18,14 @@ export default function Navbar() {
  
   return (
     <div className="relative">
-      <div className="flex fixed items-center sm:justify-between bg-white shadow py-4 lg:py-6 px-4 sm:px-10  z-50 top-0 left-0 right-0">
+      <div className="flex fixed items-center sm:justify-between bg-white shadow py-4 lg:py-6 px-4 sm:px-10  z-50 top-0 left-0 right-0 ">
         <div className="flex justify-start  items-center gap-5">
           <div>
-            <img
-              src="https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F2295%2FLogo-new.png&w=1920&q=75"
+            <Image
+              src="/image/Logo-new.webp"
               alt="image"
+              height={220}
+              width={200}
             />
           </div>
           <button className=" hidden lg:flex items-center  gap-2 justify-center bg-white text-[#009F7F] border-2 border-slate-200 md:w-30 md:h-10 md:rounded-lg ">

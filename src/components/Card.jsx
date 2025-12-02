@@ -12,6 +12,7 @@ import { GiSlicedBread } from "react-icons/gi";
 import { RiDrinks2Line } from "react-icons/ri";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ProductCard() {
   const [fruit, setFruit] = useState(false);
@@ -256,12 +257,17 @@ export default function ProductCard() {
             return (
               <div key={item.id} className=" shadow rounded-lg bg-white ">
                 <div className="border-b-2 border-gray-50">
-                  <img src={item.img} />
+                  <Image 
+                  src={item.Image} 
+                  alt="List"
+                  height={500}
+                  width={500}
+                  />
                 </div>
                 <div className="flex flex-col px-3 py-5">
                   <h2 className="text-xl text-slate-400">{item.title}</h2>
                   <div className="flex justify-between items-center text-[#009F7F]">
-                    {item.description}{" "}
+                    {item.description}
                     <button className="border-2 border-slate-200 text-[#009F7F] px-4 py-1 rounded-2xl">
                       Cart
                     </button>
