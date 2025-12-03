@@ -19,7 +19,7 @@ export default function Slider() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 640) setVisible(1);        // Mobile
+      if (window.innerWidth < 640) setVisible(1);   // Mobile
       else if (window.innerWidth < 1024) setVisible(2);  // Tablet
       else setVisible(3);                               // Desktop
     };
@@ -48,7 +48,7 @@ export default function Slider() {
         {slides.map((slide) => (
           <div
             key={slide.id}
-            className="relative h-40 mt-10 lg:mt-0 xl:h-54 shrink-0 shadow-md rounded overflow-hidden group "
+            className="relative h-40  mt-10 lg:mt-0 xl:h-54 shrink-0 shadow-md rounded overflow-hidden group "
             style={{ width: `${100 / visible}%` }}
           >
             <Image

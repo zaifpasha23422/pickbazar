@@ -1,12 +1,15 @@
-
+"use client";
 import { FaShoppingBag } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BsFilterLeft } from "react-icons/bs";
 import Slider from "@/components/slider"
+import Slidebutton from "./Slidebutton";
+import {useState} from "react";
 
 export default function Hero() {
+  const[bag, setBag]= useState(false);
   return (
     <div className="relative">
       <div className="grocery w-full h-screen top-0 hidden lg:block ">
@@ -29,8 +32,8 @@ export default function Hero() {
               Search
             </button>
           </form>
-
-          <div className="flex flex-col gap-2 items-center justify-center rounded-md bg-[#009F7F] h-25 w-25 ml-[95%] fixed z-50">
+          <div onClick={()=> setBag(!bag)}
+          className="flex flex-col gap-2 items-center justify-center rounded-md bg-[#009F7F] h-25 w-25 ml-[95%] fixed z-50">
             <span className="flex gap-2 text-white">
               <FaShoppingBag />0 item
             </span>
@@ -60,6 +63,7 @@ export default function Hero() {
       <button className="flex items-center text-xl gap-1"> <FaApple /> Grocery <IoMdArrowDropdown /></button>
     </div>
     </div>
+    <Slidebutton  bag={bag} setBag={setBag} />
     </div>
   );
 }

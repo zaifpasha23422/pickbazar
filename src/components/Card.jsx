@@ -13,6 +13,7 @@ import { RiDrinks2Line } from "react-icons/ri";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 import { useState } from "react";
 import Image from "next/image";
+import Dailogue from "./Pop";
 
 export default function ProductCard() {
   const [fruit, setFruit] = useState(false);
@@ -24,9 +25,12 @@ export default function ProductCard() {
   const [cook, setCook] = useState(false);
   const [breakfast, setBreakfast] = useState(false);
   const [beverage, setBeverage] = useState(false);
-  const [beauty, setBeauty] = useState(false);
+  const [beauty, setBeauty] = useState(false); 
+  const [selected,setSelected]=useState(null)
+
+
   return (
-    <div className="flex gap-6 bg-[#F3F4F6]">
+    <div className="flex gap-6 bg-[#F3F4F6] relative">
       <div className="w-1/4 sticky bg-white h-[98%] top-20 pb-30 mt-0.5 hidden xl:block ">
         <ul className=" w-full p-10 space-y-5 pr-10 ">
           <li onClick={() => setFruit(!fruit)} className="flex flex-col gap-2">
@@ -251,11 +255,13 @@ export default function ProductCard() {
           </li>
         </ul>
       </div>
-      <div className="flex flex-col mx-auto">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-8 p-4 mb-10 bg-gray-100 ">
+      <div className="flex flex-col mx-auto ">
+        <div 
+        className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-8 p-4 mb-10 bg-gray-100 ">
           {data.map((item) => {
             return (
-              <div key={item.id} className=" shadow rounded-lg bg-white ">
+              <div onClick={()=>setSelected(item)}
+               key={item.id} className=" shadow rounded-lg bg-white " >
                 <div className="border-b-2 border-gray-50">
                   <Image 
                   src={item.Image} 
@@ -265,9 +271,10 @@ export default function ProductCard() {
                   />
                 </div>
                 <div className="flex flex-col px-3 py-5">
-                  <h2 className="text-xl text-slate-400">{item.title}</h2>
+                  <h1 className="text-slate-400 ">{item.quantity}</h1>
+                  <h2 className="text-xl text-slate-400">{item.price}</h2>
                   <div className="flex justify-between items-center text-[#009F7F]">
-                    {item.description}
+                    {item.title}
                     <button className="border-2 border-slate-200 text-[#009F7F] px-4 py-1 rounded-2xl">
                       Cart
                     </button>
@@ -278,11 +285,13 @@ export default function ProductCard() {
           })}
         </div>
         <div className="flex justify-center  pb-20">
-          <button className="bg-[#009F7F] rounded text-white py-3 px-5">
+          <button className="bg-[#009F7F] rounded text-white py-3 px-10">
             Load More
           </button>
         </div>
       </div>
+      {selected && <Dailogue list={selected} selected={selected} setSelected={setSelected}  />}
     </div>
+   
   );
 }
