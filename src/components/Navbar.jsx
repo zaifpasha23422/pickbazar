@@ -8,29 +8,46 @@ import { FaGoogle } from "react-icons/fa";
 import { CiMobile1 } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import Modal from "./Modal";
+import List from "./List";
 import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
+  const [category, setCategory]= useState(false);
   const pathname = usePathname();
   if (pathname == "/join" || pathname == "/register") return;
+  const [changeBg,setChangeBg]=useState(false);
 
- 
+  useEffect(()=>{
+    window.addEventListener("scroll",handleScroll)
+    return ()=>{
+      window.removeEventListener("scroll",handleScroll)
+    }
+  })
+ function handleScroll(){
+  if(window.scrollY>25){
+    setChangeBg(true)
+  }else{
+    setChangeBg(false)
+  }
+ }
   return (
     <div className="relative">
-      <div className="flex fixed items-center sm:justify-between bg-white shadow py-4 lg:py-6 px-4 sm:px-10  z-50 top-0 left-0 right-0 ">
-        <div className="flex justify-start  items-center gap-5">
+      <div  className={`flex fixed items-center sm:justify-between py-4 lg:py-6 px-4 sm:px-10 z-50 top-0 left-0 right-0 
+         ${changeBg ? "bg-white shadow-md" : "bg-transparent"}`}>
+        <div className="flex justify-start  items-center gap-10">
           <div>
             <Image
               src="/image/Logo-new.webp"
               alt="image"
-              height={220}
-              width={200}
+              height={160}
+              width={140}
             />
           </div>
-          <button className=" hidden lg:flex items-center  gap-2 justify-center bg-white text-[#009F7F] border-2 border-slate-200 md:w-30 md:h-10 md:rounded-lg ">
+          <button onClick={() =>setCategory(!category)}
+          className=" hidden lg:flex items-center  gap-2 justify-center bg-white text-[#009F7F] border-2 border-slate-200 md:w-30 md:h-10 md:rounded-lg cursor-pointer ">
             <FaApple />
-            Clothing <IoMdArrowDropdown />
+            Grocery <IoMdArrowDropdown />
           </button>
         </div>
         <div className="hidden xl:block">
@@ -63,7 +80,7 @@ export default function Navbar() {
         <div className="flex gap-10 ">
           <button
             onClick={()=> setOpen(!isOpen)}
-            className="bg-[#009F7F] rounded-md text-white px-6 py-2  hidden xl:block"
+            className="bg-[#009F7F] rounded-md text-white px-6 py-2  hidden xl:block cursor-pointer"
           >
             Join
           </button>
@@ -73,7 +90,8 @@ export default function Navbar() {
         </div>
       </div>
     {/* </div> */}
-    <Modal isOpen={isOpen} setOpen={setOpen}/>
+    < Modal isOpen={isOpen} setOpen={setOpen}/>
+    <List category={category} setCategory={setCategory}/>
     </div>
   );
 }
