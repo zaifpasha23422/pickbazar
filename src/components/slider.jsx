@@ -50,7 +50,7 @@ export default function Slider() {
             key={slide.id}
             className="relative h-40  mt-10 lg:mt-0 xl:h-54 shrink-0 shadow-md rounded overflow-hidden group "
             style={{ width: `${100 / visible}%` }}
-          >
+          > 
             <Image
               src={slide.url}
               alt="slide"
