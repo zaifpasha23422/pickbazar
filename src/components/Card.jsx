@@ -14,6 +14,7 @@ import { MdOutlineHealthAndSafety } from "react-icons/md";
 import { useState } from "react";
 import Image from "next/image";
 import Dailogue from "./Pop";
+import CartQuantity from "@/app/cart/page";
 
 export default function ProductCard() {
   const [fruit, setFruit] = useState(false);
@@ -27,6 +28,7 @@ export default function ProductCard() {
   const [beverage, setBeverage] = useState(false);
   const [beauty, setBeauty] = useState(false); 
   const [selected,setSelected]=useState(null)
+  const [cart, setCart]=useState(false)
 
 
   return (
@@ -34,7 +36,7 @@ export default function ProductCard() {
       <div className="w-1/4 sticky bg-white h-[98%] top-20 pb-30 mt-0.5 hidden xl:block ">
         <ul className=" w-full p-10 space-y-5 pr-10 ">
           <li onClick={() => setFruit(!fruit)} className="flex flex-col gap-2">
-            <div className="flex items-center">
+            <div className="flex items-center cursor-pointer">
               <p className="flex items-center gap-3">
                 <TbAppleFilled />
                 Fruits & Vegetables
@@ -53,7 +55,7 @@ export default function ProductCard() {
             </ul>
           </li>
           <li onClick={() => setMeat(!meat)} className="flex flex-col gap-2">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between cursor-pointer">
               <p className="flex items-center gap-3">
                 <TbMeat />
                 Meat and Fish
@@ -72,7 +74,7 @@ export default function ProductCard() {
             </ul>
           </li>
           <li onClick={() => setSnack(!snack)} className="flex flex-col gap-2">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between cursor-pointer">
               <p className="flex items-center gap-3">
                 <BsFillCupFill />
                 Snacks
@@ -98,7 +100,7 @@ export default function ProductCard() {
             onClick={() => setPetcare(!petcare)}
             className="flex flex-col gap-2"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between cursor-pointer">
               <p className="flex items-center gap-3">
                 <PiBowlFoodBold />
                 Pet Care
@@ -118,7 +120,7 @@ export default function ProductCard() {
             </ul>
           </li>
           <li onClick={() => setClean(!clean)} className="flex flex-col gap-2">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between cursor-pointer">
               <p className="flex items-center gap-3">
                 <GiVacuumCleaner />
                 Home & Cleaning
@@ -138,7 +140,7 @@ export default function ProductCard() {
             </ul>
           </li>
           <li onClick={() => setDairy(!dairy)} className="flex flex-col gap-2">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between cursor-pointer">
               <p className="flex items-center gap-3">
                 <LuMilk />
                 Dairy
@@ -159,7 +161,7 @@ export default function ProductCard() {
             </ul>
           </li>
           <li onClick={() => setCook(!cook)} className="flex flex-col gap-2">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between cursor-pointer">
               <p className="flex items-center gap-3">
                 <PiCookingPot />
                 Cooking
@@ -183,7 +185,7 @@ export default function ProductCard() {
             onClick={() => setBreakfast(!breakfast)}
             className="flex flex-col gap-2"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between cursor-pointer">
               <p className="flex items-center gap-3">
                 <GiSlicedBread />
                 Breakfast
@@ -207,7 +209,7 @@ export default function ProductCard() {
             onClick={() => setBeverage(!beverage)}
             className="flex flex-col gap-2"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between cursor-pointer">
               <p className="flex items-center gap-3">
                 <RiDrinks2Line />
                 Beverage
@@ -232,8 +234,8 @@ export default function ProductCard() {
             onClick={() => setBeauty(!beauty)}
             className="flex flex-col gap-2"
           >
-            <div className="flex items-center justify-between">
-              <p className="flex items-center gap-3">
+            <div className="flex items-center justify-between cursor-pointer">
+              <p className="flex items-center gap-3 ">
                 <MdOutlineHealthAndSafety />
                 Health & Beauty
               </p>
@@ -242,7 +244,7 @@ export default function ProductCard() {
               </p>
             </div>
             <ul
-              className={`flex flex-col gap-2 pl-7 pt-2 ${
+              className={`flex flex-col gap-2 pl-7 pt-2  ${
                 beauty ? "block" : "hidden"
               }`}
             >
@@ -260,24 +262,28 @@ export default function ProductCard() {
         className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-8 p-4 mb-10 bg-gray-100 ">
           {data.map((item) => {
             return (
-              <div onClick={()=>setSelected(item)}
-               key={item.id} className=" shadow rounded-lg bg-white " >
-                <div className="border-b-2 border-gray-50">
+              <div 
+               key={item.id} className="shadow rounded-lg bg-white" >
+                <div onClick={()=>setSelected(item)}
+                className="border-b-2 border-gray-50 cursor-pointer">
                   <Image 
                   src={item.Image} 
                   alt="List"
-                  height={500}
+                  height={400}
                   width={500}
                   />
                 </div>
-                <div className="flex flex-col px-3 py-5">
-                  <h1 className="text-slate-400 ">{item.quantity}</h1>
-                  <h2 className="text-xl text-slate-400">{item.price}</h2>
-                  <div className="flex justify-between items-center text-[#009F7F]">
-                    {item.title}
-                    <button className="border-2 border-slate-200 text-[#009F7F] px-4 py-1 rounded-2xl">
+                <div className="flex flex-col gap-4 px-3 py-2">
+                  <div>
+                  <h1 className=" ">{item.title}</h1>
+                  <h2 className="text-sm text-slate-400">{item.quantity}</h2>
+                  </div>
+                  <div className="flex justify-between items-center text-lg text-[#009F7F]">
+                    {item.price}
+                    {/* <button className="border-2 border-slate-200 text-[#009F7F] px-4 py-1 rounded-2xl hover:bg-[#009F7F] hover:text-white">
                       Cart
-                    </button>
+                    </button> */}
+                    <CartQuantity />
                   </div>
                 </div>
               </div>
