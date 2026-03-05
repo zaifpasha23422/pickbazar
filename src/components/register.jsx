@@ -18,17 +18,17 @@ const Register = ({register,setRegister}) => {
             <div>
                 <label htmlFor="name">Name</label>
                 <br />
-                <input type="text" className="border-2 border-slate-200 h-10 w-100 rounded-lg"/>
+                <input type="text" className="border-2 border-slate-200 h-10 w-100 rounded-lg p-2"/>
             </div>
              <div>
                 <label htmlFor="name">Email</label>
                 <br />
-                <input type="text" className="border-2 border-slate-200 h-10 w-100 rounded-lg"/>
+                <input type="text" className="border-2 border-slate-200 h-10 w-100 rounded-lg p-2"/>
             </div>
             <div>
                 <label htmlFor="password">Password</label>
                 <br />
-                <input type="text" className="border-2 border-slate-200 h-10 w-100 rounded-lg" />
+                <input type="text" className="border-2 border-slate-200 h-10 w-100 rounded-lg p-2" />
             </div>
              <div className="flex w-100 h-12 bg-[#009F7F]  justify-center text-white rounded-xl">
             <button>Register</button>
