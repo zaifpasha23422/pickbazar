@@ -22,7 +22,7 @@ export default function Contact() {
           <h1 className="font-semibold">website</h1>
           <p>https://redq.io</p>
           <h1 className="font-semibold">Follow us</h1>
-          <ul className="flex gap-5">
+          <ul className="flex gap-5"> 
             <li>
               <FaFacebook />
             </li>
@@ -45,7 +45,7 @@ export default function Contact() {
               <label htmlFor="name">Name:</label>
               <br />
               <input
-                className="border-2  border-slate-200 h-10 w-full  rounded-lg"
+                className="border-2  border-slate-200 h-10 w-full  rounded-lg p-2"
                 type="text"
                 id="text"
               />
@@ -54,7 +54,7 @@ export default function Contact() {
               <label htmlFor="email">Email:</label>
               <br />
               <input
-                className="border-2 border-slate-200 h-10 w-full rounded-lg"
+                className="border-2 border-slate-200 h-10 w-full rounded-lg p-2"
                 type="text"
                 id="text"
               />
@@ -63,17 +63,17 @@ export default function Contact() {
           <label htmlFor="subject">Subject</label>
           <input
             type="text"
-            className="border-2 border-slate-200 h-10 rounded-lg"
+            className="border-2 border-slate-200 h-10 rounded-lg p-2"
           />
 
           <label htmlFor="descrition">Description</label>
           <input
             type="text"
-            className="border-2 border-slate-200 h-30 rounded-lg"
+            className="border-2 border-slate-200 h-30 rounded-lg "
           />
         </form>
         <div className="">
-          <button className="bg-[#009F7F] rounded-2xl text-white w-25 h-10">
+          <button className="bg-[#009F7F] rounded-2xl text-white w-25 h-10 ">
             Submit
           </button>
         </div>
