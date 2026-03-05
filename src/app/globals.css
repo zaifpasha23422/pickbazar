@@ -41,3 +41,31 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.bag{
+ animation-name: bag-animation;
+ animation-duration: 1s;
+}
+
+@keyframes bag-animation{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
+.cross{
+  animation-name: cross-animation;
+  animation-duration: 1s;
+}
+
+@keyframes cross-animation{
+  0%{
+    transform: translateY(0%);
+
+  }
+  100%{
+    transform: translateY(100%);
+
+  }
+}
