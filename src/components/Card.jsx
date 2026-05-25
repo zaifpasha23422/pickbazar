@@ -276,14 +276,14 @@ export default function ProductCard() {
                 <div className="flex flex-col gap-4 px-3 py-2">
                   <div>
                   <h1 className=" ">{item.title}</h1>
-                  <h2 className="text-sm text-slate-400">{item.quantity}</h2>
+                  <h2 className="text-sm text-slate-400">{item.qunatity}</h2>
                   </div>
                   <div className="flex justify-between items-center text-lg text-[#009F7F]">
                     {item.price}
                     {/* <button className="border-2 border-slate-200 text-[#009F7F] px-4 py-1 rounded-2xl hover:bg-[#009F7F] hover:text-white">
                       Cart
                     </button> */}
-                    <CartQuantity />
+                    <CartQuantity product={item}/>
                   </div>
                 </div>
               </div>

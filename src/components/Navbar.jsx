@@ -52,7 +52,7 @@ export default function Navbar() {
         </div>
         <div className="hidden xl:block">
           <ul className="flex md:gap-10  md:pl-120">
-            <li className="hover:text-[#009F7F]">
+            <li className="hover:text-[#009F7F]"> 
               <Link href="/shop">Shop</Link>
             </li>
             <li className="hover:text-[#009F7F]">
