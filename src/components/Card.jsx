@@ -290,11 +290,11 @@ export default function ProductCard() {
             );
           })}
         </div>
-        <div className="flex justify-center  pb-20">
+        {/* <div className="flex justify-center  pb-20">
           <button className="bg-[#009F7F] rounded text-white py-3 px-10">
             Load More
           </button>
-        </div>
+        </div> */}
       </div>
       {selected && <Dailogue list={selected} selected={selected} setSelected={setSelected}  />}
     </div>

@@ -63,7 +63,7 @@ export const CounterProvider = ({ children }) => {
 
       const currentQty = prev[id]?.quantity || 0;
 
-      if (currentQty <= 1) {
+      if (currentQty <=  1) {
 
         const updated = { ...prev };
 
@@ -78,7 +78,7 @@ export const CounterProvider = ({ children }) => {
         [id]: {
           ...prev[id],
           quantity: currentQty - 1,
-        },
+        },  
       };
     });
   };

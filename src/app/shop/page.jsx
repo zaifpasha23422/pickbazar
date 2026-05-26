@@ -21,8 +21,8 @@ export default function Shop() {
                 />
               </div>
               <div className="flex flex-col p-2">
-                <h1 className="text-md font-bold">{item.name}</h1>
-                <h1 className="text-xs">{item.address}</h1>
+                <h1 className="text-md font-bold ">{item.name}</h1>
+                <h1 className="text-xs text-slate-500">{item.address}</h1>
               </div>
             </div>
           );

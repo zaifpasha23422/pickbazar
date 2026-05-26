@@ -7,9 +7,24 @@ import { BsFilterLeft } from "react-icons/bs";
 import Slider from "@/components/slider"
 import Slidebutton from "./Slidebutton";
 import {useState} from "react";
+import { useCounter } from "@/context/CounterContext";
 
 export default function Hero() {
   const[bag, setBag]= useState(false);
+  const {cartItems} = useCounter()
+
+  const items = Object.values(cartItems);
+
+  // total price
+  const total = items.reduce((acc, item) => {
+    return (
+      acc +
+      parseInt(item.product.price.replace("$", "")) *
+        item.quantity
+    );
+  }, 0);
+
+  
   return (
     <div className="relative">
       <div className="grocery w-full h-screen top-0 hidden lg:block ">
@@ -35,10 +50,10 @@ export default function Hero() {
           <div onClick={()=> setBag(!bag)}
           className="flex flex-col gap-2 items-center justify-center rounded-md bg-[#009F7F] h-25 w-25 ml-[95%] fixed z-50">
             <span className="flex gap-2 text-white">
-              <FaShoppingBag />0 item
+              <FaShoppingBag />{items.length} item
             </span>
             <button className="bg-white text-[#009F7F] w-16 h-8 rounded-md">
-              $0.00
+              ${total}
             </button>
           </div>
         </div>

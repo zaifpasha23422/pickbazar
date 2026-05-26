@@ -14,15 +14,15 @@ export default function Contact() {
         />
         <main className="flex flex-col  gap-4 mt-4">
           <h1 className="font-semibold">Address</h1>
-          <p>NY State Thruway, New York, USA</p>
+          <p className="text-slate-600">NY State Thruway, New York, USA</p>
           <h1 className="font-semibold">Phone</h1>
-          <p>+129290122122</p>
+          <p className="text-slate-600">+129290122122</p>
           <h1 className="font-semibold">Email Address</h1>
-          <p>demo@demo.com</p>
+          <p className="text-slate-600">demo@demo.com</p>
           <h1 className="font-semibold">website</h1>
-          <p>https://redq.io</p>
+          <p className="text-slate-600">https://redq.io</p>
           <h1 className="font-semibold">Follow us</h1>
-          <ul className="flex gap-5"> 
+          <ul className="flex gap-6 text-slate-600"> 
             <li>
               <FaFacebook />
             </li>
@@ -37,7 +37,7 @@ export default function Contact() {
       </div>
       <div className="mt-6 md:my-10 rounded-xl flex flex-col gap-10  bg-white p-15  ">
         <div className="text-3xl font-semibold">
-          How can we imporved your experience ?
+          How can we improved your experience ?
         </div>
         <form action="" className="flex flex-col gap-2">
           <div className="flex flex-col sm:flex-row gap-5">
@@ -65,7 +65,6 @@ export default function Contact() {
             type="text"
             className="border-2 border-slate-200 h-10 rounded-lg p-2"
           />
-
           <label htmlFor="descrition">Description</label>
           <input
             type="text"
