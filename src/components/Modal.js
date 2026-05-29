@@ -22,11 +22,11 @@ const Modal = ({ isOpen, setOpen }) => {
     >
       {!register ? (
         <div
-          className="bg-white p-8 rounded-2xl shadow-lg relative w-[380px]"
+          className="bg-white p-8 sm:rounded-2xl shadow-lg relative h-full sm:h-160  w-full  sm:w-[380px]"
           onClick={(e) => e.stopPropagation()}
         >
        
-          <div className="mt-6 text-center">
+          <div className="mt-6 sm:text-center">
             <Image src="/image/Logo-new.webp" alt="logo" height={100} width={100} />
             <p className="text-lg text-slate-500 mt-4">
               Login with your email & password
@@ -39,7 +39,7 @@ const Modal = ({ isOpen, setOpen }) => {
               <input
                 name="email"
                 type="email"
-                className="border-2 border-slate-200 w-full h-10 rounded-lg p-2"
+                className="border-2 border-slate-200 w-full h-10 rounded-lg p-2 focus:outline-[#009F7F]"
               />
             </div>
 
@@ -48,7 +48,7 @@ const Modal = ({ isOpen, setOpen }) => {
               <input
                 name="password"
                 type="password"
-                className="border-2 border-slate-200 w-full h-10 rounded-lg p-2"
+                className="border-2 border-slate-200 w-full h-10 rounded-lg p-2 focus:outline-[#009F7F]"
               />
             </div>
 
@@ -73,6 +73,7 @@ const Modal = ({ isOpen, setOpen }) => {
             <p className="text-slate-500">
               Don't have an account?{" "}
               <button
+              type="button"
                 className="text-[#009F7F] underline"
                 onClick={() => setRegister(true)}
               >

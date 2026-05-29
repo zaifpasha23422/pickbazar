@@ -2,14 +2,14 @@ import { shops } from "@/data/shop";
 import Image from "next/image";
 export default function Shop() {
   return (
-    <div className=" px-10  xl:px-56 py-15 mt-20">
-      <div className="text-3xl font-bold">All Shops</div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
+    <div className=" px-10  xl:px-56  py-8 sm:py-26 mt-10">
+      <div className="text-3xl font-bold text-slate-500">All Shops</div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 my-8 ">
         {shops.map((item) => {
           return (
             <div
               key={item.id}
-              className="flex gap-5 justify-center items-center px-5 py-2 border-2 border-slate-200 rounded-md "
+              className="flex gap-5 justify-center items-center px-5 py-2 border-2 border-slate-200 rounded-md  hover:border-[#009F7F] hover:cursor-pointer "
             >
               <div className="h-14 w-20">
                 <Image

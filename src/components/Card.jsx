@@ -36,7 +36,7 @@ export default function ProductCard() {
       <div className="w-1/4 sticky bg-white h-[98%] top-20 pb-30 mt-0.5 hidden xl:block ">
         <ul className=" w-full p-10 space-y-5 pr-10 ">
           <li onClick={() => setFruit(!fruit)} className="flex flex-col gap-2">
-            <div className="flex items-center cursor-pointer">
+            <div className="flex items-center cursor-pointer hover:text-[#009F7F] ">
               <p className="flex items-center gap-3">
                 <TbAppleFilled />
                 Fruits & Vegetables
@@ -55,8 +55,8 @@ export default function ProductCard() {
             </ul>
           </li>
           <li onClick={() => setMeat(!meat)} className="flex flex-col gap-2">
-            <div className="flex items-center justify-between cursor-pointer">
-              <p className="flex items-center gap-3">
+            <div className="flex items-center justify-between cursor-pointer hover:text-[#009F7F]">
+              <p className="flex items-center gap-3 ">
                 <TbMeat />
                 Meat and Fish
               </p>
@@ -74,7 +74,7 @@ export default function ProductCard() {
             </ul>
           </li>
           <li onClick={() => setSnack(!snack)} className="flex flex-col gap-2">
-            <div className="flex items-center justify-between cursor-pointer">
+            <div className="flex items-center justify-between cursor-pointer hover:text-[#009F7F]">
               <p className="flex items-center gap-3">
                 <BsFillCupFill />
                 Snacks
@@ -100,7 +100,7 @@ export default function ProductCard() {
             onClick={() => setPetcare(!petcare)}
             className="flex flex-col gap-2"
           >
-            <div className="flex items-center justify-between cursor-pointer">
+            <div className="flex items-center justify-between cursor-pointer hover:text-[#009F7F]">
               <p className="flex items-center gap-3">
                 <PiBowlFoodBold />
                 Pet Care
@@ -120,7 +120,7 @@ export default function ProductCard() {
             </ul>
           </li>
           <li onClick={() => setClean(!clean)} className="flex flex-col gap-2">
-            <div className="flex items-center justify-between cursor-pointer">
+            <div className="flex items-center justify-between cursor-pointer hover:text-[#009F7F]">
               <p className="flex items-center gap-3">
                 <GiVacuumCleaner />
                 Home & Cleaning
@@ -140,7 +140,7 @@ export default function ProductCard() {
             </ul>
           </li>
           <li onClick={() => setDairy(!dairy)} className="flex flex-col gap-2">
-            <div className="flex items-center justify-between cursor-pointer">
+            <div className="flex items-center justify-between cursor-pointer hover:text-[#009F7F]" >
               <p className="flex items-center gap-3">
                 <LuMilk />
                 Dairy
@@ -185,7 +185,7 @@ export default function ProductCard() {
             onClick={() => setBreakfast(!breakfast)}
             className="flex flex-col gap-2"
           >
-            <div className="flex items-center justify-between cursor-pointer">
+            <div className="flex items-center justify-between cursor-pointer hover:text-[#009F7F]">
               <p className="flex items-center gap-3">
                 <GiSlicedBread />
                 Breakfast
@@ -209,7 +209,7 @@ export default function ProductCard() {
             onClick={() => setBeverage(!beverage)}
             className="flex flex-col gap-2"
           >
-            <div className="flex items-center justify-between cursor-pointer">
+            <div className="flex items-center justify-between cursor-pointer hover:text-[#009F7F]">
               <p className="flex items-center gap-3">
                 <RiDrinks2Line />
                 Beverage
@@ -234,7 +234,7 @@ export default function ProductCard() {
             onClick={() => setBeauty(!beauty)}
             className="flex flex-col gap-2"
           >
-            <div className="flex items-center justify-between cursor-pointer">
+            <div className="flex items-center justify-between cursor-pointer hover:text-[#009F7F]">
               <p className="flex items-center gap-3 ">
                 <MdOutlineHealthAndSafety />
                 Health & Beauty
@@ -296,7 +296,7 @@ export default function ProductCard() {
           </button>
         </div> */}
       </div>
-      {selected && <Dailogue list={selected} selected={selected} setSelected={setSelected}  />}
+      {<Dailogue list={selected}  setSelected={setSelected}  />}
     </div>
    
   );

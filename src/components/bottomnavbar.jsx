@@ -1,13 +1,18 @@
+"use client"
 import { RiMenu2Fill } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { GoHome } from "react-icons/go";
 import { LuShoppingBag } from "react-icons/lu";
 import { CgProfile } from "react-icons/cg";
+import Mini from "./Mini";
+import { useState } from "react";
+
 export function Bottomnav() {
+  const[slide , setSlide] = useState(false)
   return (
     <div className="fixed bottom-0 w-full xl:hidden py-4 bg-white px-4">
       <ul className="flex justify-between items-center  ">
-        <li className="sm:text-[30px] text-[24px] ">
+        <li onClick={()=> setSlide(!slide)} className="sm:text-[30px] text-[24px] ">
           <RiMenu2Fill />
         </li>
         <li className="sm:text-[30px] text-[24px]">
@@ -23,6 +28,7 @@ export function Bottomnav() {
           <CgProfile />
         </li>
       </ul>
+      <Mini slide={slide} setSlide={setSlide}/>
     </div>
   );
 }

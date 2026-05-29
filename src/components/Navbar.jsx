@@ -15,7 +15,7 @@ export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
   const [category, setCategory]= useState(false);
   const pathname = usePathname();
-  if (pathname == "/join" || pathname == "/register") return;
+  // if (pathname == "/join" || pathname == "/register") return;
   const [changeBg,setChangeBg]=useState(false);
 
   useEffect(()=>{
@@ -45,7 +45,7 @@ export default function Navbar() {
             />
           </div>
           <button onClick={() =>setCategory(!category)}
-          className=" hidden lg:flex items-center  gap-2 justify-center bg-white text-[#009F7F] border-2 border-slate-200 md:w-30 md:h-10 md:rounded-lg cursor-pointer ">
+          className=" hidden lg:flex items-center  gap-2 justify-center bg-white text-[#009F7F] border-2 border-slate-200 md:w-30 md:h-10 md:rounded-lg cursor-pointer hover:border-[#009F7F] ">
             <FaApple />
             Grocery <IoMdArrowDropdown />
           </button>
@@ -65,7 +65,7 @@ export default function Navbar() {
               <span className="flex items-center justify-center gap-1 hover:text-[#009F7F]">
                 Pages <IoIosArrowDropdownCircle />
               </span>
-              <ul className="absolute p-6 mt-2 space-y-6 bg-white rounded-xl hidden group-hover:block">
+              <ul className="absolute p-6  mt-2 space-y-6 bg-white rounded-xl hidden group-hover:block ">
                 <li>Flash Sales</li>
                 <li>Manufactures/Publishers</li>
                 <li>Authors</li>
