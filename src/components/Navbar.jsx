@@ -6,13 +6,14 @@ import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { usePathname } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
 import { CiMobile1 } from "react-icons/ci";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Modal from "./Modal";
 import List from "./List";
 import Image from "next/image";
+import { ModalContext } from "@/context/Modalcontext";
 
 export default function Navbar() {
-  const [isOpen, setOpen] = useState(false);
+  const{open, setOpen} = useContext(ModalContext)
   const [category, setCategory]= useState(false);
   const pathname = usePathname();
   // if (pathname == "/join" || pathname == "/register") return;
@@ -79,7 +80,7 @@ export default function Navbar() {
         </div>
         <div className="flex gap-10 ">
           <button
-            onClick={()=> setOpen(!isOpen)}
+            onClick={()=> setOpen(!open)}
             className="bg-[#009F7F] rounded-md text-white px-6 py-2  hidden xl:block cursor-pointer"
           >
             Join
@@ -90,7 +91,7 @@ export default function Navbar() {
         </div>
       </div>
     {/* </div> */}
-    < Modal isOpen={isOpen} setOpen={setOpen}/>
+    < Modal open={open} setOpen={setOpen}/>
     <List category={category} setCategory={setCategory}/>
     </div>
   );

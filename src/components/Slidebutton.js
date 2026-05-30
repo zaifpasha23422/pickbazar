@@ -79,20 +79,180 @@
 
 
 
+// "use client";
+
+// import { useCounter } from "@/context/CounterContext";
+// import { ModalContext } from "@/context/Modalcontext";
+// import Image from "next/image";
+// import { IoBagCheckSharp } from "react-icons/io5";
+// import { RxCross2 } from "react-icons/rx";
+// import { useContext } from "react";
+
+// const Slidebutton = ({ carts, setCartsOpen }) => {
+
+//   const { cartItems } = useCounter();
+  
+
+//   const items = Object.values(cartItems);
+
+//   // total price
+//   const total = items.reduce((acc, item) => {
+//     return (
+//       acc +
+//       parseInt(item.product.price.replace("$", "")) *
+//         item.quantity
+//     );
+//   }, 0);
+
+//   if (!carts) return null;
+
+//   return (
+//     <>
+//       {/* Overlay */}
+//       <div
+//         onClick={() => setCartsOpen(false)}
+//         className="fixed inset-0 bg-black/40 z-40"
+//       ></div>
+
+//       {/* Sidebar */}
+//       <div className={`fixed top-0 right-0 h-screen w-full sm:w-[420px] bg-white z-[99] flex flex-col shadow-2xl  transition-transform duration-700 ease-in-out
+//         ${carts ? "translate-x-0" : "translate-x-full"}`}>
+
+//         {/* Header */}
+//         <div className="flex items-center justify-between border-b p-7.5">
+
+//           <div className="flex items-center gap-3 text-[#009F7F] text-xl font-semibold">
+//             <IoBagCheckSharp />
+//             <h1>
+//               {items.length} Items
+//             </h1>
+//           </div>
+
+//           <button
+//             onClick={() => setCartsOpen(false)}
+//             className="text-2xl cursor-pointer"
+//           >
+//             <RxCross2 />
+//           </button>
+//         </div>
+
+//         {/* Cart Items */}
+//         <div className="flex-1 overflow-y-auto p-5 space-y-4 ">
+
+//           {items.length === 0 ? (
+
+//             <div className="flex flex-col items-center justify-center h-full text-center">
+
+//               <IoBagCheckSharp className="text-[120px] text-[#009F7F]" />
+
+//               <h1 className="text-xl font-semibold mt-5">
+//                 No products found
+//               </h1>
+
+//             </div>
+
+//           ) : (
+
+//             items.map((item) => (
+
+//               <div
+//                 key={item.product.id}
+//                 className="flex gap-4 border rounded-xl p-3"
+//               >
+
+//                 <Image
+//                   src={item.product.Image}
+//                   alt={item.product.title}
+//                   width={80}
+//                   height={80}
+//                   className="rounded-lg object-cover"
+//                 />
+
+//                 <div className="flex flex-col justify-between flex-1">
+                    
+
+//                   <div>
+//                     <h1 className="font-semibold">
+//                       {item.product.title}
+//                     </h1>
+
+//                     <p className="text-sm text-gray-500">
+//                       {item.product.quantity}
+//                     </p>
+//                   </div>
+
+//                   <div className="flex items-center justify-between">
+
+//                     <p className="text-[#009F7F] font-semibold">
+//                       {item.product.price}
+//                     </p>
+
+//                     <p className="text-sm">
+//                       Qty: {item.quantity}
+//                     </p>
+
+                
+//                   </div>
+
+//                 </div>
+
+//               </div>
+//             ))
+//           )}
+//         </div>
+
+//         {/* Footer */}
+//         <div className="border-t p-5">
+
+//           <button className="w-full bg-[#009F7F] text-white py-4 rounded-2xl flex items-center justify-between px-6 text-lg font-semibold">
+
+//             <span>Checkout</span>
+
+//             <span className="bg-white text-[#009F7F] px-4 py-1 rounded-xl">
+//               ${total}
+//             </span>
+
+//           </button>
+
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Slidebutton;
+
+
 "use client";
 
 import { useCounter } from "@/context/CounterContext";
 import Image from "next/image";
 import { IoBagCheckSharp } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
+import { useEffect, useState } from "react";
 
-const Slidebutton = ({ bag, setBag }) => {
-
+const Slidebutton = ({ carts, setCartsOpen }) => {
   const { cartItems } = useCounter();
 
   const items = Object.values(cartItems);
 
-  // total price
+  // Mount/unmount state for animation
+  const [show, setShow] = useState(carts);
+
+  useEffect(() => {
+    if (carts) {
+      setShow(true);
+    } else {
+      const timer = setTimeout(() => {
+        setShow(false);
+      }, 700); // same as transition duration
+
+      return () => clearTimeout(timer);
+    }
+  }, [carts]);
+
+  if (!show) return null;
+
   const total = items.reduce((acc, item) => {
     return (
       acc +
@@ -101,31 +261,31 @@ const Slidebutton = ({ bag, setBag }) => {
     );
   }, 0);
 
-  if (!bag) return null;
-
   return (
     <>
       {/* Overlay */}
       <div
-        onClick={() => setBag(false)}
-        className="fixed inset-0 bg-black/40 z-40"
-      ></div>
+        onClick={() => setCartsOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-700
+          ${carts ? "opacity-100" : "opacity-0"}`}
+      />
 
       {/* Sidebar */}
-      <div className="fixed top-0 right-0 h-screen w-full sm:w-[420px] bg-white z-50 flex flex-col shadow-2xl">
-
+      <div
+        className={`fixed top-0 right-0 h-screen w-full sm:w-[420px]
+        bg-white z-[99] flex flex-col shadow-2xl
+        transform transition-transform duration-2000 ease-in-out
+        ${carts ? "translate-x-0" : "translate-x-full"}`}
+      >
         {/* Header */}
-        <div className="flex items-center justify-between border-b p-5">
-
+        <div className="flex items-center justify-between border-b p-7">
           <div className="flex items-center gap-3 text-[#009F7F] text-xl font-semibold">
             <IoBagCheckSharp />
-            <h1>
-              {items.length} Items
-            </h1>
+            <h1>{items.length} Items</h1>
           </div>
 
           <button
-            onClick={() => setBag(false)}
+            onClick={() => setCartsOpen(false)}
             className="text-2xl cursor-pointer"
           >
             <RxCross2 />
@@ -134,28 +294,20 @@ const Slidebutton = ({ bag, setBag }) => {
 
         {/* Cart Items */}
         <div className="flex-1 overflow-y-auto p-5 space-y-4">
-
           {items.length === 0 ? (
-
             <div className="flex flex-col items-center justify-center h-full text-center">
-
               <IoBagCheckSharp className="text-[120px] text-[#009F7F]" />
 
               <h1 className="text-xl font-semibold mt-5">
                 No products found
               </h1>
-
             </div>
-
           ) : (
-
             items.map((item) => (
-
               <div
                 key={item.product.id}
                 className="flex gap-4 border rounded-xl p-3"
               >
-
                 <Image
                   src={item.product.Image}
                   alt={item.product.title}
@@ -165,8 +317,6 @@ const Slidebutton = ({ bag, setBag }) => {
                 />
 
                 <div className="flex flex-col justify-between flex-1">
-                    
-
                   <div>
                     <h1 className="font-semibold">
                       {item.product.title}
@@ -178,7 +328,6 @@ const Slidebutton = ({ bag, setBag }) => {
                   </div>
 
                   <div className="flex items-center justify-between">
-
                     <p className="text-[#009F7F] font-semibold">
                       {item.product.price}
                     </p>
@@ -186,12 +335,8 @@ const Slidebutton = ({ bag, setBag }) => {
                     <p className="text-sm">
                       Qty: {item.quantity}
                     </p>
-
-                
                   </div>
-
                 </div>
-
               </div>
             ))
           )}
@@ -199,17 +344,13 @@ const Slidebutton = ({ bag, setBag }) => {
 
         {/* Footer */}
         <div className="border-t p-5">
-
           <button className="w-full bg-[#009F7F] text-white py-4 rounded-2xl flex items-center justify-between px-6 text-lg font-semibold">
-
             <span>Checkout</span>
 
             <span className="bg-white text-[#009F7F] px-4 py-1 rounded-xl">
               ${total}
             </span>
-
           </button>
-
         </div>
       </div>
     </>

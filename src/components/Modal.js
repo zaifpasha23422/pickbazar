@@ -5,19 +5,19 @@ import { ImCross } from "react-icons/im";
 import Register from "./register";
 import Image from "next/image";
 
-const Modal = ({ isOpen, setOpen }) => {
+const Modal = ({ open, setOpen }) => {
   const [register, setRegister] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    document.body.style.overflow = open ? "hidden" : "";
     return () => (document.body.style.overflow = "");
-  }, [isOpen]);
+  }, [open]);
 
-  if (!isOpen) return null;
+  if (!open) return null;
 
   return (
     <div
-      className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50"
+      className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[99]"
       onClick={() => setOpen(false)}
     >
       {!register ? (

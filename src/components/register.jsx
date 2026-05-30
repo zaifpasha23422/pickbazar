@@ -5,7 +5,7 @@ import { ImCross } from "react-icons/im";
 const Register = ({register,setRegister}) => {
    
   return (
-     <div onClick={(e) => e.stopPropagation()} className="fixed h-full w-full sm:w-130 sm:h-150   px-8 py-8 z-50  sm:rounded-2xl  bg-white shadow  " >
+     <div onClick={(e) => e.stopPropagation()} className="fixed h-full w-full sm:w-130 sm:h-150   px-8 py-8 z-40  sm:rounded-2xl  bg-white shadow  " >
         {/* <button onClick={()=>setRegister(!register)}
             className="cursor-pointer  absolute right-10 top-5 text-xl">
             <ImCross />

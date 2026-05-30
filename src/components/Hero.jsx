@@ -6,12 +6,14 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { BsFilterLeft } from "react-icons/bs";
 import Slider from "@/components/slider"
 import Slidebutton from "./Slidebutton";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import { useCounter } from "@/context/CounterContext";
+import { ModalContext } from "@/context/Modalcontext";
 
 export default function Hero() {
-  const[bag, setBag]= useState(false);
+  // const[bag, setBag]= useState(false);
   const {cartItems} = useCounter()
+  const {carts, setCartsOpen} = useContext(ModalContext)
 
   const items = Object.values(cartItems);
 
@@ -47,8 +49,8 @@ export default function Hero() {
               Search
             </button>
           </form>
-          <div onClick={()=> setBag(!bag)}
-          className="flex flex-col gap-2 items-center justify-center rounded-md bg-[#009F7F] h-25 w-25 ml-[95%] fixed z-50">
+          <div onClick={()=> setCartsOpen(!carts)}
+          className="flex flex-col gap-2 items-center justify-center rounded-md bg-[#009F7F] h-25 w-25 ml-[95%] fixed z-40">
             <span className="flex gap-2 text-white">
               <FaShoppingBag />{items.length} item
             </span>
@@ -68,7 +70,7 @@ export default function Hero() {
       <button className="flex items-center text-xl gap-1"> <FaApple /> Grocery <IoMdArrowDropdown /></button>
     </div>
     </div>
-    <Slidebutton  bag={bag} setBag={setBag} />
+    <Slidebutton  carts={carts} setCartOpen={setCartsOpen} />
     </div>
   
   );

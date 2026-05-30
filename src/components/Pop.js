@@ -6,7 +6,7 @@ import { FaHeart } from "react-icons/fa";
 const Dailogue = ({ list, setSelected }) => {
   if (!list) return null;
   return (
-    <div className="fixed bg-black/30 top-0 left-0 right-0 bottom-0 z-50
+    <div className="fixed bg-black/30 top-0 left-0 right-0 bottom-0 z-40
 " onClick={() => setSelected(false)}>
       <div
         className="bg-white flex items-center rounded-3xl w-[70%] h-[86%] mx-auto my-25 "
