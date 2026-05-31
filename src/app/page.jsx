@@ -1,4 +1,4 @@
-import Bottomnavbar from "@/components/Bottomnavbar";
+import Bottomnavbar from "@/components/bottomnavbar";
 import ProductCard from "@/components/Card";
 import Hero from "@/components/Hero";
 

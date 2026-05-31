@@ -56,7 +56,7 @@ export default function CartQuantity({ product }) {
 
   const { cartItems, increment, decrement } = useCounter();
 
-  const qty = cartItems[product.id]?.quantity || 0;
+  const qty = cartItems[product?.id]?.quantity || 0;
 
   return (
     <>
@@ -74,7 +74,7 @@ export default function CartQuantity({ product }) {
         <div className="button flex items-center">
 
           <button
-            onClick={() => decrement(product.id)}
+            onClick={() => decrement(product?.id)}
             className="px-2 h-9 bg-[#009F7F] text-white cursor-pointer rounded-l-2xl"
           >
             -
